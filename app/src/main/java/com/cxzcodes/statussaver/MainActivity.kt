@@ -8,6 +8,7 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -18,6 +19,7 @@ import android.util.Log
 import android.view.Display
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -25,6 +27,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.cxzcodes.statussaver.Adapter.PageAdapter
@@ -66,26 +69,31 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.images)))
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.videos)))
 
-///        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-///
+
 ///        }
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.saved_files)))
         val adapter: PagerAdapter = PageAdapter(supportFragmentManager, tabLayout.tabCount)
         viewPager?.adapter = adapter
 
-        Toast.makeText(this@MainActivity, "by Mellow", Toast.LENGTH_LONG).show()
         viewPager?.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
+
                 viewPager?.setCurrentItem(tab.position)
+
+
+
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
-    }
 
-    @SuppressLint("RestrictedApi")
+
+    }
+     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         if (menu is MenuBuilder) {
@@ -105,7 +113,7 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_share -> {
                 val shareIntent = Intent(Intent.ACTION_SEND)
                 shareIntent.type = "text/plain"
-                val app_url = "https://github.com/GauthamAsir/WhatsApp_Status_Saver/releases"
+                val app_url = "https://github.com/chhagan0"
                 shareIntent.putExtra(
                     Intent.EXTRA_TEXT,
                     "Hey check out my app at \n\n$app_url"
@@ -133,7 +141,8 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+        
+      
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -227,7 +236,7 @@ class MainActivity : AppCompatActivity() {
 //                val appUpdater = AppUpdater(this@MainActivity)
 //                appUpdater.setDisplay(Display.DIALOG)
 //                appUpdater.setDialogAlertStyle(R.style.dialogAlertStyle)
-//                appUpdater.setUpGithub("GauthamAsir", "WhatsApp_Status_Saver")
+//                appUpdater.setUpGithub("CHAGANAsir", "WhatsApp_Status_Saver")
 //                appUpdater.start()
 //            }
 //        }

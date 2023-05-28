@@ -27,7 +27,7 @@ import java.util.Random
 
 object Common {
     val GRID_COUNT = 2
-    private val CHANNEL_NAME = "GAUTHAM"
+    private val CHANNEL_NAME = "CHAGAN"
     val STATUS_DIRECTORY = File(
         Environment.getExternalStorageDirectory().toString() +
                 File.separator + "WhatsApp/Media/.Statuses"
@@ -83,7 +83,7 @@ object Common {
                 destFile.setLastModified(System.currentTimeMillis())
                 SingleMediaScanner(context, file)
                 val data = FileProvider.getUriForFile(
-                    context, "a.gautham.statusdownloader.provider",
+                    context, "a.CHAGAN.statusdownloader.provider",
                     File(destFile.absolutePath)
                 )
                 showNotification(context, container, status, fileName, data)

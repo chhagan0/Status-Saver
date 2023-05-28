@@ -119,7 +119,7 @@ class SavedFilesFragment : Fragment() {
                 progressBar!!.visibility = View.GONE
             }
         }
-    //        return a.gautham.statusdownloader.Utils.ThumbnailUtils.createVideoThumbnail(status.getFile().getAbsolutePath(),
+    //        return a.CHAGAN.statusdownloader.Utils.ThumbnailUtils.createVideoThumbnail(status.getFile().getAbsolutePath(),
     //                3);
     //    }
 }

@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/h1"
-        android:text="@string/by_gautham"
+        android:text="@string/by_CHAGAN"
         android:textColor="@color/white"
         android:gravity="center"
         android:textSize="@dimen/_20sdp"/>
